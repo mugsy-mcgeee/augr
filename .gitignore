@@ -1,0 +1,10 @@
+Dota2_ReplayParser_v102/
+MinGW/
+Python/
+augr.bat
+config.json
+gstreamer/
+kivy/
+*.pyc
+*.swp
+vault.dat
