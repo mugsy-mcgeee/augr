@@ -1,3 +1,17 @@
+augr
+====
+
+A program to examine your performance in a match or compare how your performance
+has changed over time between all of your matches.
+
+Does it work?
+=============
+
+Look, this program isn't going to be useful yet. Don't even bother to download it.
+It runs, parses replays (using Bruno's awesome parser), and shows some stats. But 
+is still very much a work in-progress. Feel free to contribute!
+
+
 How to run on Windows
 =====================
 
