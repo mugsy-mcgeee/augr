@@ -12,9 +12,8 @@ Steps
 -----
 
 1. Clone repo
-2. Install 
-3. Run bootstrap.bat to install remaining dependencies
-4. Run augr.bat to start program
+2. Run bootstrap.bat to install remaining dependencies
+3. Run augr.bat to start program
 
 
 How do I find my 64-bit Steam ID?
