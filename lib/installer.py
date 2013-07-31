@@ -1,4 +1,5 @@
 # URLs
+DIST_URL='http://python-distribute.org/distribute_setup.py'
 KIVY_URL='http://kivy.googlecode.com/files/Kivy-1.7.1-w32.zip'
 MATPLOTLIB_URL='https://github.com/downloads/matplotlib/matplotlib/matplotlib-1.2.0.win32-py2.7.exe'
 
@@ -17,6 +18,19 @@ def rcopy(src_base, dst_base, name):
     shutil.copytree( pjoin(src_base,name),pjoin(dst_base,name) )
 def copy(src_base, dst_base, name):
     shutil.copy( pjoin(src_base,name),pjoin(dst_base,name) )
+
+
+def setup_python():
+    py_bin = pjoin('/Python27','python.exe')
+    easy_bin = pjoin('/Python27','Scripts','easy_install.exe')
+
+    print '\nConfiguring python'
+    urllib.urlretrieve(DIST_URL, 'distribute_setup.py')
+    Popen([py_bin, 'distribute_setup.py'], stdout=PIPE, stderr=PIPE).communicate()
+    os.remove('distribute_setup.py')
+    print 'Installing numpy'
+    Popen([easy_bin,'numpy'], stdout=PIPE, stderr=PIPE).communicate()
+
 
 def matplotlib_present():
     src_base = pjoin('/Python27','Lib','site-packages')
@@ -121,6 +135,7 @@ def initial_config():
 
 
 if __name__ == '__main__':
+    setup_python()
     install_kivy()
     install_matplotlib()
     install_sqlalchemy()
